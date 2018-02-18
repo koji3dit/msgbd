@@ -1,9 +1,15 @@
-<h1>Messages 一覧</h1>
-<% @messages.each do |message| %>
-名前:<%= message.name %>
-内容:<%= message.body %>
-<br>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+      Messages 一覧
+  </div>
+  <div class="panel-body">
+    <% @messages.each do |message| %>
+    <span class="label label-info"><%= message.name %></span>
+    内容:<%= message.body %>
+    <br>
+    <% end %>
+  </div>
+</div>
 
 
 
@@ -12,5 +18,5 @@
     <%= f.text_field :name %>
 内容:
     <%= f.text_field :body %>
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
